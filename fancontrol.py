@@ -1,8 +1,9 @@
 #import the GPIO and time package
 import RPi.GPIO as io
-from time import asctime, sleep
+import time
 import subprocess
 import sys
+import asyncio
 sys.stdout.reconfigure(encoding='utf-8') ##forces utf-8 encoding.
 
 #Set up GPIO pins
@@ -34,7 +35,27 @@ print (avg)
 print (avgint)
 print (topavg)
 print (botavg)
-#def fan1():
-#    if (avgint > 60):
-         
+def fan1():
+    while True:
+        time.sleep(0.5) #Add a sleep function in this loop to reduce load, else you'll oversample.
+        if (topavg > 40):
+            io.cleanup()
+            io.setmode(io.BCM)
+            io.setup(17,io.OUT)
+            io.output(17,1)
+        elif (topavg< 40):
+            io.setmode(io.BCM)
+            io.setup(17,io.OUT)
+            io.output(17,0)
+def fan2():
+    while True:
+        time.sleep        
+        
+                
+            
+#test function
+fan1()
+            
+        
+#Notes for 10/25, need to create async functions for both fans. Rewrite both single fan functions to use asyncio waits.
 

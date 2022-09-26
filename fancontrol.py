@@ -20,3 +20,21 @@ pi1int = int(pi1.stdout)
 pi2int = int(pi2.stdout)
 pi3int = int(pi3.stdout)
 pi4int = int(pi4.stdout) 
+#print temps for debugging
+print (pi1int)
+print (pi2int)
+print (pi3int)
+print (pi4int)
+avg = (pi1int + pi2int + pi3int + pi4int)/4
+topavg = int(pi1int + pi2int)/2
+botavg = int(pi3int + pi4int)/2
+
+avgint = int(avg)
+print (avg)
+print (avgint)
+print (topavg)
+print (botavg)
+#def fan1():
+#    if (avgint > 60):
+         
+

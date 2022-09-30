@@ -31,30 +31,42 @@ topavg = int(pi1int + pi2int)/2
 botavg = int(pi3int + pi4int)/2
 
 avgint = int(avg)
+topint = int(topavg)
+botint = int(botavg)
 print (avg)
 print (avgint)
-print (topavg)
-print (botavg)
-def fan1():
-    while True:
-        time.sleep(0.5) #Add a sleep function in this loop to reduce load, else you'll oversample.
-        if (topavg > 40):
-            io.cleanup()
-            io.setmode(io.BCM)
-            io.setup(17,io.OUT)
-            io.output(17,1)
-        elif (topavg< 40):
-            io.setmode(io.BCM)
-            io.setup(17,io.OUT)
-            io.output(17,0)
-def fan2():
-    while True:
-        time.sleep        
-        
+print (topint)
+print (botint)
+
+##def fan1():
+#    while True:
+#        time.sleep(0.5) #Add a sleep function in this loop to reduce load, else you'll oversample.
+#        if (topavg > 50):
+#            io.setmode(io.BCM)
+#            io.setup(17,io.OUT)
+#            io.setup(27,io.OUT)
+#            io.output(17,1)
+#            io.output(27,1)
+#        elif (topavg < 40):
+#            io.setmode(io.BCM)
+#            io.setup(17,io.OUT)
+#            io.setup(27,io.OUT)
+#            io.output(17,0)
+#            io.output(27,0)
+##def fan2():
+#    while True:
+#        time.sleep(0.5)
+#        if (botavg >30):
+#            io.setmode(io.BCM)
+#            io.setup(27,io.OUT)
+#            io.output(27,1)
+#                
+#        
                 
             
-#test function
-fan1()
+#Invoke function
+#fan1()
+#fan2()
             
         
 #Notes for 10/25, need to create async functions for both fans. Rewrite both single fan functions to use asyncio waits.

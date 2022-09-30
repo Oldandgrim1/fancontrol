@@ -8,10 +8,10 @@ io.setup(27, io.OUT) #gpio27
 io.setup(22, io.OUT) #gpio22
 
 while True:
+    time.sleep(1)
+    io.output(17,0)
     time.sleep(0.25)
     io.output(17,1)
-    time.sleep(0.25)
-    io.output(17,0)
     time.sleep(0.25)
     io.output(27,1)
     time.sleep(0.25)
